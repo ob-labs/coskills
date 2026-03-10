@@ -229,4 +229,4 @@ server_backup/
 .specstory/**
 skills/pmem-config/**
 
-./cursor/**
+.cursor/**
