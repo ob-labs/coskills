@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 环境自举（合并模式）：
-优先级：pmem-key.env/系统环境变量 > skill/config/.env.example > .env
+优先级：pmem-key.env/系统环境变量 > skill/config/env.example > .env
 """
 
 import os
@@ -12,12 +12,12 @@ from dotenv import dotenv_values, load_dotenv
 
 
 def _resolve_env_example(skill_root: Path) -> Path:
-    """返回当前 skill 的 .env.example 路径。"""
-    local_example = skill_root / "config" / ".env.example"
+    """返回当前 skill 的 env.example 路径。"""
+    local_example = skill_root / "config" / "env.example"
     if local_example.exists():
         return local_example
     
-    raise RuntimeError("未找到配置文件（请确认 skill/config/.env.example 存在）")
+    raise RuntimeError("未找到配置文件（请确认 skill/config/env.example 存在）")
 
 
 def _init_shared_config(skill_root: Path) -> Path:
